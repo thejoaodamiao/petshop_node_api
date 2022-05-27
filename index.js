@@ -45,7 +45,8 @@ app.get("/api/clima", async (req, res) => {
 
 app.post("/api/DDD", async (req, res) => {
   const telefone = req.body.telefone;
-  codigo = telefone.substring(0, 2);
+  codigo = telefone.substring(2, 4);
+  console.log(codigo);
   try {
     const { data } = await DDD.get(codigo);
     res.status(200).send({ UF: data.state });
