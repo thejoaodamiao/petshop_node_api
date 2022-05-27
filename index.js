@@ -10,7 +10,7 @@ const cep = require("./api/cep");
 
 //express
 const app = express();
-const port = 3000;
+const port = 3000 || process.env.PORT;
 
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(
