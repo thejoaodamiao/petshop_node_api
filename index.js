@@ -57,12 +57,13 @@ app.post("/api/DDD", async (req, res) => {
 app.get("/api/saudacao", (req, res) => {
   let saudacao;
   const hour = new Date().getHours();
+  console.log(hour);
   if (hour < 12) {
     saudacao = { saudacao: "bom dia" };
   } else if (hour < 17) {
-    saudacao = { saudacao: "bom tarde" };
+    saudacao = { saudacao: "boa tarde" };
   } else {
-    saudacao = { saudacao: "bom noite" };
+    saudacao = { saudacao: "boa noite" };
   }
   res.status(200).json(saudacao);
 });
