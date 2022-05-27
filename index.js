@@ -1,6 +1,7 @@
 //libs usadas
 const express = require("express");
 const bodyParser = require("body-parser");
+const date = require("date-fns");
 //chamadas das apis
 const estados = require("./api/estados");
 const clima = require("./api/clima");
@@ -21,6 +22,10 @@ app.use(
 );
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+app.get("/", (req, res) => {
+  res.status(200).send("<h1>Server de api do João</h1>");
+});
 
 app.post("/api/estados", async (req, res) => {
   const UF = req.body.UF;
@@ -57,7 +62,8 @@ app.post("/api/DDD", async (req, res) => {
 
 app.get("/api/saudacao", (req, res) => {
   let saudacao;
-  const hour = new Date().getHours();
+  const date = new Date();
+
   console.log(hour);
   if (hour < 12) {
     saudacao = { saudacao: "bom dia" };
@@ -94,6 +100,6 @@ app.post("/api/cep", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.status(200).send("<h1>Server de api do João</h1>");
+app.post("/api/date", (req, res) => {
+  const userDate = req.body.user_date;
 });
