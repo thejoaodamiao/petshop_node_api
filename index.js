@@ -24,7 +24,16 @@ app.use(
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 app.get("/", (req, res) => {
-  res.status(200).send("<h1>Server de api do João</h1>");
+  let html = `<div><h1>Rotas de minha api</h1>
+  <ol>
+    <li>/api/saudacao GET</li>
+    <li>/api/DDD POST</li>
+    <li>/api/estado POST</li>
+    <li>/api/cep POST</li>
+    <li>/api/coleiras/all GET</li>
+    <li>/api/coleiras/delete DELETE</li>
+  </ol></div>`;
+  res.status(200).send(html);
 });
 
 app.post("/api/estados", async (req, res) => {
