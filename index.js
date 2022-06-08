@@ -79,7 +79,7 @@ app.get("/api/saudacao", (req, res) => {
     saudacao = { saudacao: "bom dia" };
   } else if (hour < 17) {
     saudacao = { saudacao: "boa tarde" };
-  } else if (hour > 17 && hour < 6) {
+  } else {
     saudacao = { saudacao: "boa noite" };
   }
   res.status(200).json(saudacao);
