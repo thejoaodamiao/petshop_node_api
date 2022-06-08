@@ -73,9 +73,7 @@ app.get("/api/saudacao", (req, res) => {
   let saudacao;
   const dale = new Date().getUTCHours();
   const hour = dale - 3;
-  console.log(hour);
 
-  console.log(hour);
   if (hour < 12 && hour > 6) {
     saudacao = { saudacao: "bom dia", horas: hour };
   } else if (hour < 17) {
