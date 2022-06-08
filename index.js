@@ -71,7 +71,7 @@ app.post("/api/DDD", async (req, res) => {
 
 app.get("/api/saudacao", (req, res) => {
   let saudacao;
-  const hour = new Date().getHours();
+  const hour = new Date().getUTCHours();
 
   console.log(hour);
   if (hour < 12) {
