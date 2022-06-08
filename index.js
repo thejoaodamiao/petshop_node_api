@@ -77,11 +77,11 @@ app.get("/api/saudacao", (req, res) => {
 
   console.log(hour);
   if (hour < 12) {
-    saudacao = { saudacao: "bom dia" };
+    saudacao = { saudacao: "bom dia", horas: hour };
   } else if (hour < 17) {
-    saudacao = { saudacao: "boa tarde" };
+    saudacao = { saudacao: "boa tarde", horas: hour };
   } else {
-    saudacao = { saudacao: "boa noite" };
+    saudacao = { saudacao: "boa noite", horas: hour };
   }
   res.status(200).json(saudacao);
 });
