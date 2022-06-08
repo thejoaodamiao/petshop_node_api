@@ -111,4 +111,5 @@ app.post("/api/cep", async (req, res) => {
 
 app.post("/api/date", (req, res) => {
   const userDate = req.body.user_date;
+  alert(moment(userDate, "MM/DD/YYYY", true).isValid());
 });
