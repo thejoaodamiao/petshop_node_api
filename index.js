@@ -8,6 +8,7 @@ const clima = require("./api/clima");
 const DDD = require("./api/DDD");
 const coleiras = require("./model/coleira");
 const cep = require("./api/cep");
+const moment = require("moment");
 
 //express
 const app = express();
@@ -111,5 +112,9 @@ app.post("/api/cep", async (req, res) => {
 
 app.post("/api/date", (req, res) => {
   const userDate = req.body.user_date;
-  alert(moment(userDate, "MM/DD/YYYY", true).isValid());
+  if (moment(userDate, "MM/DD/'YYYY", true).isValid()) {
+    res.status(200).json({ joga: "ladinho" });
+  } else {
+    res.status(500);
+  }
 });
